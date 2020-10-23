@@ -237,10 +237,22 @@ a:hover {
 
 /* ! ScrollBar Styling */
 
+/* Chart stylin */
+
+.PieChartCOntainer {
+  background-color: #ffff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
 /* Queries */
 
 @media only screen and (max-width: 400px) {
   .followBtn {
     margin-right: 0px;
+  }
+  .followerDetail p {
+    font-size: 11px;
   }
 }

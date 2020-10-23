@@ -3,9 +3,10 @@ import { appContext } from "../../context/context";
 import FollowersCard from "./FollowersCard";
 import { AiOutlineLink } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
+import PieChart from "./charts/pie";
 
 function UserCard() {
-  let { githubUserData } = React.useContext(appContext);
+  let { githubUserData, githubRepos } = React.useContext(appContext);
   const {
     avatar_url,
     bio,
@@ -41,6 +42,9 @@ function UserCard() {
                 <AiOutlineLink /> {blog || "Sorry No Porfolio"}
               </p>
             </div>
+          </div>
+          <div className="PieChartCOntainer">
+            <PieChart />
           </div>
         </div>
         <div className="col-md-6 cardComp followersMAinParent">
