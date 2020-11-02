@@ -1,27 +1,9 @@
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { appContext } from "../../../context/context";
 
-function PieChart() {
+function BarChart() {
   const { githubRepos } = React.useContext(appContext);
-
-  const langs = githubRepos.reduce((total, item) => {
-    const { language } = item;
-    if (!language) {
-      return total;
-    }
-
-    if (!total[language]) {
-      total[language] = 1;
-    } else {
-      total[language] = total[language] + 1;
-    }
-
-    return total;
-  }, {});
-
-  const lebels = Object.keys(langs);
-  let data = Object.values(langs);
 
   const option = {
     tooltips: {
@@ -45,13 +27,15 @@ function PieChart() {
 
   return (
     <div>
-      <Doughnut
+      <Bar
+        width={200}
+        height={200}
         options={option}
         data={{
-          labels: [...lebels],
+          labels: ["hello", "tyjjk"],
           datasets: [
             {
-              data: [...data],
+              data: [1, 23, 44, 56, 646, 7443, 242],
               backgroundColor: [
                 "#f1d4d4",
                 "#e6739f",
@@ -72,4 +56,4 @@ function PieChart() {
   );
 }
 
-export default PieChart;
+export default BarChart;

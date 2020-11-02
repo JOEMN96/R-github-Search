@@ -3,7 +3,7 @@ import { appContext } from "../../context/context";
 import FollowersCard from "./FollowersCard";
 import { AiOutlineLink } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
-import PieChart from "./charts/pie";
+import DonutChart from "./charts/Donut";
 
 function UserCard() {
   let { githubUserData, githubRepos } = React.useContext(appContext);
@@ -44,7 +44,7 @@ function UserCard() {
             </div>
           </div>
           <div className="PieChartCOntainer">
-            <PieChart />
+            <DonutChart />
           </div>
         </div>
         <div className="col-md-6 cardComp followersMAinParent">
