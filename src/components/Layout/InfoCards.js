@@ -9,7 +9,7 @@ export default function InfoCard() {
   const { githubUserData } = React.useContext(appContext);
   const { public_repos, followers, following, public_gists } = githubUserData;
 
-  // Structuring Data
+  // DEStructuring Data
 
   let userData = [
     {

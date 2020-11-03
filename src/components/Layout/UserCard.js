@@ -29,7 +29,12 @@ function UserCard() {
                 <p> @{twitter_username || "NotAvailabe"}</p>
               </div>
               <div className="followBtnParent">
-                <a className="followBtn" href={html_url}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="followBtn"
+                  href={html_url}
+                >
                   Follow
                 </a>
               </div>
@@ -39,7 +44,10 @@ function UserCard() {
                 <FcAbout /> {bio || "Sorry No Bio !"}
               </p>
               <p>
-                <AiOutlineLink /> {blog || "Sorry No Porfolio"}
+                <a target="_blank" rel="noopener noreferrer" href={blog}>
+                  <AiOutlineLink className="linkIcon" />
+                  {blog || "Sorry No Porfolio"}
+                </a>
               </p>
             </div>
           </div>

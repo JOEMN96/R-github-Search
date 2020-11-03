@@ -263,12 +263,10 @@ a:hover {
 .searchwrapper input {
   padding: 7px;
   border: 1px solid #ddd;
-  border-right: none;
   outline: none;
 }
 
 .searchIcon {
-  font-size: 41px;
   background-color: #fff;
   color: #000;
   border: 1px solid #ddd;
@@ -279,10 +277,20 @@ a:hover {
   cursor: pointer;
 }
 
+.linkIcon {
+  margin-right: 8px;
+}
+
 .searchwrapper h4 {
   margin-left: 20px;
   color: #ada9a9;
   margin-top: 5px;
+}
+
+.throwError {
+  color: red;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* Queries */

@@ -1,10 +1,9 @@
 import React from "react";
-import { BsSearch } from "react-icons/bs";
 import { appContext } from "../../context/context";
 
 function Search() {
   // getting Req data from appContext
-  const { request } = React.useContext(appContext);
+  const { request, error, searchUser } = React.useContext(appContext);
 
   // Use State
   const [user, setUser] = React.useState("");
@@ -14,6 +13,8 @@ function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user) {
+      searchUser(user);
+      // throw err
     }
   };
 
@@ -28,11 +29,12 @@ function Search() {
               onChange={(e) => setUser(e.target.value)}
               placeholder="Search Users Here"
             />
-            <BsSearch className="searchIcon" />
+            <input className="searchIcon" value="Search" type="submit" />
           </form>
         </div>
         <h4>Requests {request || 0}/60</h4>
       </div>
+      <p className="throwError"> {error.condition ? error.msg : ""} </p>
     </section>
   );
 }
