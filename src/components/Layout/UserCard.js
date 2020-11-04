@@ -6,7 +6,7 @@ import { FcAbout } from "react-icons/fc";
 import DonutChart from "./charts/Donut";
 
 function UserCard() {
-  let { githubUserData, githubRepos } = React.useContext(appContext);
+  let { githubUserData } = React.useContext(appContext);
   const {
     avatar_url,
     bio,
