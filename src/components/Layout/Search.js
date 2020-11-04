@@ -27,7 +27,7 @@ function Search() {
               type="text"
               value={user}
               onChange={(e) => setUser(e.target.value)}
-              placeholder="Search Users Here"
+              placeholder="Enter User Name"
             />
             <input className="searchIcon" value="Search" type="submit" />
           </form>

@@ -4,7 +4,6 @@ import { appContext } from "../../../context/context";
 
 function DonutChart() {
   const { githubRepos } = React.useContext(appContext);
-
   const langs = githubRepos.reduce((total, item) => {
     const { language } = item;
     if (!language) {

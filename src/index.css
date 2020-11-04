@@ -264,6 +264,7 @@ a:hover {
   padding: 7px;
   border: 1px solid #ddd;
   outline: none;
+  font-weight: 500;
 }
 
 .searchIcon {

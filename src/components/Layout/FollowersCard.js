@@ -14,7 +14,9 @@ function FollowersCard() {
             <img src={avatar_url} alt={login} />
             <div className="followerDetail">
               <h5>{login}</h5>
-              <p> {html_url} </p>
+              <a target="_blank" rel="noopener noreferrer" href={html_url}>
+                <p> {html_url} </p>
+              </a>
             </div>
           </div>
         );

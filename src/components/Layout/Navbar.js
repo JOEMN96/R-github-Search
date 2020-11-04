@@ -6,7 +6,7 @@ export default class NavBar extends Component {
     return (
       <nav className="navbar ">
         <Link className="navbar-brand" to="/">
-          Navbar
+          GitHub Search
         </Link>
 
         <a href="!#">LogOut</a>

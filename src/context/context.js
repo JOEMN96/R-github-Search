@@ -19,7 +19,7 @@ const Provider = ({ children }) => {
   const [isLoading, setloading] = React.useState(false);
   const [error, setError] = React.useState({ condition: true, msg: "" });
 
-  //FETCH request
+  //FETCH request (Rate Limit)
 
   async function fetchRequest() {
     let res = await fetch(`${rootUrl}/rate_limit`);
@@ -28,7 +28,7 @@ const Provider = ({ children }) => {
     return data;
   }
 
-  // search function
+  //FETCH request (To grab all details about an user)
 
   const searchUser = async function (user) {
     setloading(true);
@@ -39,6 +39,23 @@ const Provider = ({ children }) => {
       .then((user) => {
         if (user) {
           setGithubUserData(user);
+          const { login, followers_url } = user;
+          // FETCH follwers
+          const followersList = async function () {
+            let res = await fetch(followers_url);
+            let data = await res.json();
+            setGithubFollowers(data);
+          };
+          // FETCH Repos
+          const reposList = async function () {
+            let res = await fetch(
+              `${rootUrl}/users/${login}/repos?per_page=100 `
+            );
+            let data = await res.json();
+            setGithubRepos(data);
+          };
+          followersList();
+          reposList();
           throwError();
           fetchRequest();
           setloading(false);
