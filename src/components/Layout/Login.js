@@ -1,49 +1,29 @@
 import React from "react";
-import { FaGoogle } from "react-icons/fa";
+import { FaUserSecret } from "react-icons/fa";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Login() {
-  return (
-    <div id="login-card" class="card">
-      <div className="card-body">
-        <h2 className="text-center">Login form</h2>
-        <br />
-        <form action="">
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              placeholder="Enter email"
-              name="email"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              id="email"
-              placeholder="Enter password"
-              name="pswd"
-            />
-          </div>
-          <button
-            type="submit"
-            id="button"
-            className="btn btn-primary deep-purple btn-block "
-          >
-            Submit
-          </button>
-          <br />
-          <br />
+  const { loginWithRedirect, user, isLoading } = useAuth0();
+  console.log(isLoading);
 
-          <div id="btn" className="text-center">
-            <button type="button" className="btn btn-danger btn-circle btn-sm ">
-              <i className="fa fa-google">
-                <FaGoogle />
-              </i>
-            </button>
-          </div>
-        </form>
+  return (
+    <div id="login-card" className="card">
+      <div className="card-body">
+        <div className="loginIcon">
+          <FaUserSecret />
+        </div>
+        <h2 className="text-center">Log In</h2>
+        <br />
+
+        <button
+          id="button"
+          className="btn btn-primary deep-purple btn-block "
+          onClick={loginWithRedirect}
+        >
+          LogIn
+        </button>
+        <br />
+        <br />
       </div>
     </div>
   );

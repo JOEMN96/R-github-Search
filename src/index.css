@@ -290,6 +290,31 @@ a:hover {
   text-align: center;
 }
 
+/* Nav items */
+
+.img-circle {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.userName {
+  margin-right: 15px;
+}
+
+.logInOutParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginIcon {
+  text-align: center;
+}
+.loginIcon > * {
+  font-size: 60px;
+}
+
 /* Queries */
 
 @media only screen and (max-width: 400px) {
@@ -306,6 +331,9 @@ a:hover {
     overflow-y: scroll;
   }
   .searchwrapper {
+    flex-wrap: wrap;
+  }
+  .logInOutParent {
     flex-wrap: wrap;
   }
 }
