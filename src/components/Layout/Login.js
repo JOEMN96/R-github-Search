@@ -3,7 +3,7 @@ import { FaUserSecret } from "react-icons/fa";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Login() {
-  const { loginWithRedirect, user, isLoading } = useAuth0();
+  const { loginWithRedirect, isLoading } = useAuth0();
   console.log(isLoading);
 
   return (
