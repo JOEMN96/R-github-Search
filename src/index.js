@@ -10,7 +10,7 @@ ReactDOM.render(
   <Auth0Provider
     domain={process.env.REACT_APP_DOMAIN}
     clientId={process.env.REACT_APP_CLIENTID}
-    redirectUri={"https://joereact-searchusers.netlify.app"}
+    redirectUri={window.location.origin}
     cacheLocation="localstorage"
   >
     <Provider>
